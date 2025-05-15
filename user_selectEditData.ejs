@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head -->
+<%-include('admin_head')%>
+<!-- Head end -->
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                            <Assest// src="adminAssest/adminAssest//icon/logo.png" alt="CoolAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li class="has-sub">
+                            <a class="assest//js-arrow" href="#">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled assest//js-sub-list">
+                                <li>
+                                    <a href="index.html">Dashboard 1</a>
+                                </li>
+                                <li>
+                                    <a href="index2.html">Dashboard 2</a>
+                                </li>
+                                <li>
+                                    <a href="index3.html">Dashboard 3</a>
+                                </li>
+                                <li>
+                                    <a href="index4.html">Dashboard 4</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="chart.html">
+                                <i class="fas fa-chart-bar"></i>Charts</a>
+                        </li>
+                        <li>
+                            <a href="table.html">
+                                <i class="fas fa-table"></i>Tables</a>
+                        </li>
+                        <li>
+                            <a href="form.html">
+                                <i class="far fa-check-square"></i>Forms</a>
+                        </li>
+                        <li>
+                            <a href="calendar.html">
+                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                        </li>
+                        <li>
+                            <a href="map.html">
+                                <i class="fas fa-map-marker-alt"></i>Maps</a>
+                        </li>
+                        <li class="has-sub">
+                            <a class="assest//js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Pages</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled assest//js-sub-list">
+                                <li>
+                                    <a href="login.html">Login</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">Register</a>
+                                </li>
+                                <li>
+                                    <a href="forget-pass.html">Forget Password</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="assest//js-arrow" href="#">
+                                <i class="fas fa-desktop"></i>UI Elements</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled assest//js-sub-list">
+                                <li>
+                                    <a href="button.html">Button</a>
+                                </li>
+                                <li>
+                                    <a href="badge.html">Badges</a>
+                                </li>
+                                <li>
+                                    <a href="tab.html">Tabs</a>
+                                </li>
+                                <li>
+                                    <a href="card.html">Cards</a>
+                                </li>
+                                <li>
+                                    <a href="alert.html">Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="progress-bar.html">Progress Bars</a>
+                                </li>
+                                <li>
+                                    <a href="modal.html">Modals</a>
+                                </li>
+                                <li>
+                                    <a href="switch.html">Switchs</a>
+                                </li>
+                                <li>
+                                    <a href="grid.html">Grids</a>
+                                </li>
+                                <li>
+                                    <a href="fontawesome.html">Fontawesome Icon</a>
+                                </li>
+                                <li>
+                                    <a href="typo.html">Typography</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <%-include('admin_saidBar')%>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <%-include('admin_haderBar')%>
+            <!-- END HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+            
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- DATA TABLE -->
+                                <h3 class="title-5 m-b-35">
+                                   Update Form
+                                </h3>
+                               
+                                <div class="table-responsive">
+                                      
+                                    <div class="main-content">
+                                        <div class="section__content section__content--p30">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        
+                                                    </div>
+                                                   
+                                                    <div class="col-lg-12">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <strong>User</strong> Update
+                                                            </div>
+                                                            <div class="card-body card-block">
+                                                                <form class="form-horizontal style-form" method="POST" action="/admin/userupdate_Image" enctype="multipart/form-data">
+                                                                   <input name="edit_image" type="hidden" value="<%=data.user_id%>" class="form-control">
+                                                                    
+                                                                    <div class="col-md-6">
+                                                                     <Assest// src="/uploads/<%=data.image%>" width="200" height="200">
+                                                                   </div>
+                                                                   <div class="col-sm-6">
+                                                                     <input name="image" type="file" class="form-control">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-sm-2">
+                                                                            <button type="submit"class="btn btn-theme Assest//btn">Update Image</button>
+                                                                            <!-- <button type="submit" class="btn btn-theme-danger btn-danger delbtn">Delete</button> -->
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+
+                                                                <form action="/admin/userupdata_Data" method="POST" class="form-horizontal">
+                                                                    <input type="hidden" name="update_id" value="<%=data.user_id%>" class="form-control">
+                                                                    <div class="row form-group">
+                                                                        
+
+                                                                        <div class="col col-md-6">
+                                                                            <label for="text-input" class=" form-control-label">First Name</label>
+                                                                            <input type="text" name="name" value="<%=data.name%>" placeholder="Enter you name" > 
+                                                                        </div>
+                                                                        <div class="col-12 col-md-6">
+                                                                            <!-- <p class="form-control-static">Last Name</p> -->
+                                                                            <label for="text-input" class=" form-control-label">Last Name</label>
+                                                                            <input type="text" name="lname" value="<%=data.lname%>" placeholder="Enter you name" >
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row form-group">
+                                                                        <div class="col col-md-12">
+                                                                            <label for="text-input" class=" form-control-label">Contact</label>
+                                                                            <input type="text" name="contact" value="<%=data.contact%>" placeholder="Enter you contact number " >
+                                                                        </div>
+
+                                                                        <div class="col col-md-12">
+                                                                            <label class="form-control-label">Gender</label><br>
+                                                                        
+                                                                            <input type="radio" name="gender" value="Male" 
+                                                                                <%= data.gender === 'Male' ? 'checked' : '' %>> Male
+                                                                        
+                                                                            <input type="radio" name="gender" value="Female" 
+                                                                                <%= data.gender === 'Female' ? 'checked' : '' %>> Female
+                                                                        </div>
+                                                                             
+                                                                        <div class="col-12 col-md-12">
+                                                                            <label for="text-input" class=" form-control-label">Address</label>
+                                                                            <input type="text" name="address" value="<%=data.address%>" placeholder="Enter you address " >
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row form-group">
+                                                                        <div class="col col-md-6">
+                                                                           
+                                                                            <div class="input-field">
+                                                                                <!-- <input type="text" name="state" required> -->
+                                                                                <label>Enter your State</label>
+                                                                                <select id="state" name="state" value="<%=data.state%>" onchange="updateCities()">
+                                                                                    <option value="<%=data.state%>" >--Select State--</option>
+                                                                                  </select>
+                                                                                </div>
+                                                                        </div>
+                                                                        <div class="col-12 col-md-6">
+                                                                            <div class="input-field">
+                                                                                <!-- <input type="text" name="city" required> -->
+                                                                                <label>Enter your City</label>
+                                                                                  <select id="city" name="city" value="<%=data.city%>">
+                                                                                    <option value="<%=data.city%>">--Select City--</option>
+                                                                                  </select>
+                                                                              </div>
+                                                                          
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row form-group">
+                                                                        <div class="col col-md-6">
+                                                                            <label for="password-input" class=" form-control-label">Email</label>
+                                                                            <input type="email" name="email" value="<%=data.email%>" placeholder="Enter you email " >
+                                                                        </div>
+
+
+                                                                        <div class="col col-md-6">
+                                                                            <label for="password-input" class=" form-control-label">Password</label>
+                                                                            <input type="password" name="password" value="<%=data.password%>" placeholder="Enter you password " >
+                                                                        </div>
+                                                                        
+                                                                    </div>
+
+                                                                    <div class="card-footer">
+                                                                        <!-- <button type="submit" class="btn btn-primary btn-sm">
+                                                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                                                        </button>
+                                                                        <button type="reset" class="btn btn-danger btn-sm">
+                                                                            <i class="fa fa-ban"></i> Reset
+                                                                        </button> -->
+
+                                                                        <button type="submit" name="btn" value="edit" class="btn btn-theme updateBtn">Update</button>
+                                                                       
+                                                       
+                                                                </form>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                        
+                                                    </div>
+                                                   
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <!-- END DATA TABLE -->
+                            </div>
+                        </div>
+                        
+
+                        <!-- Footer start -->
+                       <%-include('admin_footerBar')%>
+                       <!-- Footer end -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    // Object with states and sample cities
+    const india = {
+      "Andhra Pradesh": ["Vijayawada", "Visakhapatnam", "Guntur"],
+      "Arunachal Pradesh": ["Itanagar", "Tawang", "Ziro"],
+      "Assam": ["Guwahati", "Silchar", "Dibrugarh"],
+      "Bihar": ["Patna", "Gaya", "Bhagalpur"],
+      "Chhattisgarh": ["Raipur", "Bilaspur", "Durg"],
+      "Goa": ["Panaji", "Margao", "Vasco da Gama"],
+      "Gujarat": ["Ahmedabad", "Surat", "Vadodara"],
+      "Haryana": ["Chandigarh", "Gurugram", "Faridabad"],
+      "Himachal Pradesh": ["Shimla", "Manali", "Dharamshala"],
+      "Jharkhand": ["Ranchi", "Jamshedpur", "Dhanbad"],
+      "Karnataka": ["Bengaluru", "Mysuru", "Mangaluru"],
+      "Kerala": ["Thiruvananthapuram", "Kochi", "Kozhikode"],
+      "Madhya Pradesh": ["Bhopal", "Indore", "Gwalior"],
+      "Maharashtra": ["Mumbai", "Pune", "Nagpur"],
+      "Manipur": ["Imphal", "Bishnupur", "Thoubal"],
+      "Meghalaya": ["Shillong", "Tura", "Jowai"],
+      "Mizoram": ["Aizawl", "Lunglei", "Champhai"],
+      "Nagaland": ["Kohima", "Dimapur", "Mokokchung"],
+      "Odisha": ["Bhubaneswar", "Cuttack", "Rourkela"],
+      "Punjab": ["Amritsar", "Ludhiana", "Jalandhar"],
+      "Rajasthan": ["Jaipur", "Udaipur", "Jodhpur"],
+      "Sikkim": ["Gangtok", "Namchi", "Gyalshing"],
+      "Tamil Nadu": ["Chennai", "Coimbatore", "Madurai"],
+      "Telangana": ["Hyderabad", "Warangal", "Nizamabad"],
+      "Tripura": ["Agartala", "Udaipur", "Dharmanagar"],
+      "Uttar Pradesh": ["Lucknow", "Kanpur", "Varanasi"],
+      "Uttarakhand": ["Dehradun", "Haridwar", "Nainital"],
+      "West Bengal": ["Kolkata", "Howrah", "Durgapur"]
+    };
+
+    // Populate states
+    const stateSelect = document.getElementById("state");
+    for (let state in india) {
+      let option = document.createElement("option");
+      option.value = state;
+      option.textContent = state;
+      stateSelect.appendChild(option);
+    }
+
+    // Update cities based on selected state
+    function updateCities() {
+      const citySelect = document.getElementById("city");
+      const selectedState = stateSelect.value;
+      
+      // Clear previous cities
+      citySelect.innerHTML = '<option value="">--Select City--</option>';
+
+      if (selectedState) {
+        india[selectedState].forEach(city => {
+          let option = document.createElement("option");
+          option.value = city;
+          option.textContent = city;
+          citySelect.appendChild(option);
+        });
+      }
+    }
+  </script> 
+<!-- end document-->

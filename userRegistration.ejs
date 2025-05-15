@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism Login Form | CodingNepal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="wrapper">
+    <form action="/sendCode_inserReg" method="post" enctype="multipart/form-data">
+      <center><p class="p_msg" style="color:green;"><%= msg %></p></center> <br/>
+      <h2>User Registration</h2>
+      <div class="input-field">
+        <input type="text" name="name" required>
+        <label>Enter your Name</label>
+      </div>
+
+      <div class="input-field">
+        <input type="text" name="lname" required>
+        <label>Enter your Last name</label>
+      </div>
+      <br/>
+      <div class="input-field gender">
+        <span>
+          <label class="u-male">Male</label>
+          <input type="radio" id="contactChoice1" name="gender" value="male" />
+        </span>
+      
+         <span>
+          <label class="u-femail">Female</label>
+          <input type="radio" id="contactChoice2" name="gender" value="female" />
+         </span>
+      
+       
+      </div>
+      <br/><br/>
+
+      <div class="input-field">
+        <input type="number" name="contact" required>
+        <label>Enter your Contact</label>
+      </div>
+
+      <div class="input-field">
+        <input type="text" name="address" required>
+        <label>Enter your Address</label>
+      </div>
+
+      <div class="input-field">
+        <!-- <input type="text" name="state" required> -->
+        <label>Enter your State</label>
+        <select id="state" name="state" onchange="updateCities()">
+            <option value="" >--Select State--</option>
+          </select>
+        </div>
+    <div class="input-field">
+      <!-- <input type="text" name="city" required> -->
+      <label>Enter your City</label>
+        <select id="city" name="city">
+          <option value="">--Select City--</option>
+        </select>
+    </div>
+
+        <div class="input-field">
+        <input type="text" name="email" required>
+        <label>Enter your email</label>
+      </div>
+      <div class="input-field">
+        <input type="password" name="password" required>
+        <label>Enter your password</label>
+      </div>
+
+      <div class="input-field">
+        <input type="file" name="image" required>
+      </div>
+
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember">
+          <!-- <p>Remember me</p> -->
+        </label>
+        <!-- <a href="#">Forgot password?</a> -->
+      </div>
+      <button type="submit">Registration</button>
+      <div class="register">
+        <a href="userLogin">Login</a></p>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+
+<script>
+    // Object with states and sample cities
+    const india = {
+      "Andhra Pradesh": ["Vijayawada", "Visakhapatnam", "Guntur"],
+      "Arunachal Pradesh": ["Itanagar", "Tawang", "Ziro"],
+      "Assam": ["Guwahati", "Silchar", "Dibrugarh"],
+      "Bihar": ["Patna", "Gaya", "Bhagalpur"],
+      "Chhattisgarh": ["Raipur", "Bilaspur", "Durg"],
+      "Goa": ["Panaji", "Margao", "Vasco da Gama"],
+      "Gujarat": ["Ahmedabad", "Surat", "Vadodara"],
+      "Haryana": ["Chandigarh", "Gurugram", "Faridabad"],
+      "Himachal Pradesh": ["Shimla", "Manali", "Dharamshala"],
+      "Jharkhand": ["Ranchi", "Jamshedpur", "Dhanbad"],
+      "Karnataka": ["Bengaluru", "Mysuru", "Mangaluru"],
+      "Kerala": ["Thiruvananthapuram", "Kochi", "Kozhikode"],
+      "Madhya Pradesh": ["Bhopal", "Indore", "Gwalior"],
+      "Maharashtra": ["Mumbai", "Pune", "Nagpur"],
+      "Manipur": ["Imphal", "Bishnupur", "Thoubal"],
+      "Meghalaya": ["Shillong", "Tura", "Jowai"],
+      "Mizoram": ["Aizawl", "Lunglei", "Champhai"],
+      "Nagaland": ["Kohima", "Dimapur", "Mokokchung"],
+      "Odisha": ["Bhubaneswar", "Cuttack", "Rourkela"],
+      "Punjab": ["Amritsar", "Ludhiana", "Jalandhar"],
+      "Rajasthan": ["Jaipur", "Udaipur", "Jodhpur"],
+      "Sikkim": ["Gangtok", "Namchi", "Gyalshing"],
+      "Tamil Nadu": ["Chennai", "Coimbatore", "Madurai"],
+      "Telangana": ["Hyderabad", "Warangal", "Nizamabad"],
+      "Tripura": ["Agartala", "Udaipur", "Dharmanagar"],
+      "Uttar Pradesh": ["Lucknow", "Kanpur", "Varanasi"],
+      "Uttarakhand": ["Dehradun", "Haridwar", "Nainital"],
+      "West Bengal": ["Kolkata", "Howrah", "Durgapur"]
+    };
+
+    // Populate states
+    const stateSelect = document.getElementById("state");
+    for (let state in india) {
+      let option = document.createElement("option");
+      option.value = state;
+      option.textContent = state;
+      stateSelect.appendChild(option);
+    }
+
+    // Update cities based on selected state
+    function updateCities() {
+      const citySelect = document.getElementById("city");
+      const selectedState = stateSelect.value;
+      
+      // Clear previous cities
+      citySelect.innerHTML = '<option value="">--Select City--</option>';
+
+      if (selectedState) {
+        india[selectedState].forEach(city => {
+          let option = document.createElement("option");
+          option.value = city;
+          option.textContent = city;
+          citySelect.appendChild(option);
+        });
+      }
+    }
+  </script> 
